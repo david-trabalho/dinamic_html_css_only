@@ -1,0 +1,127 @@
+:root{
+    /* --clr-cor: rgba(173, 255, 47, .5 ); */
+    --clr-cor_hover: rgba(22, 104, 105, 1 );
+    --clr-cor: rgba(87, 153, 155, .8 );
+    
+}
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body{
+    font-family: 'Heebo', sans-serif;
+    box-sizing: border-box;
+    background-image: url(../img/black_board4.jpg);
+    background-position:right top;
+    width: 100%;
+    min-height: 100vh;
+    
+    animation: moveBackgroundImg 120s ease-in-out infinite alternate;
+}
+
+@keyframes moveBackgroundImg {
+    0% {
+        background-position:right top;
+    }
+    75% {
+        background-position:left bottom;
+    }
+    100% {
+        background-position:left top;
+    }
+}
+
+.container{
+    display: grid;
+    grid-template-columns: 1fr 2fr 2fr;
+}
+
+.lateral{
+    grid-column: 1 / 2;
+    margin-left: 1rem;
+    min-width: 60px;
+    max-width: 6vw;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 2rem;
+    background-color: rgba(255, 255, 255, .35);
+}
+
+.icon svg {
+    width:48px;
+    height:48px;
+    cursor: pointer;
+    fill: var(--clr-cor_hover);
+    transition: with .350ms linear;
+}
+
+.icon svg:hover {
+    fill: var(--clr-cor);
+    width:64px;
+}
+
+.gps{
+    margin-bottom: 2rem;
+}
+
+.conteudo{
+    grid-column: 2 / 3;
+    grid-row: 1 / -1;
+    padding-top: 10rem;
+}
+
+h1{ 
+    color: var(--clr-cor);
+    font-size: 4rem;
+    margin: 0px;
+    text-transform:uppercase;
+    /* cursor: pointer; */
+}
+h2{
+    color: rgb(145, 145, 145);
+    margin: 0px;
+    font-size: 2rem;
+    text-shadow: .2rem .2rem .2rem #000000;
+}
+.texto{
+    color: white;
+    margin-top: 2rem;
+    max-width: 35vw;
+    line-height: 2rem;
+    letter-spacing: 2px;
+} 
+
+.imagens {
+    grid-column: 3 / 4;
+    grid-row: 1 / -1;
+    z-index: -1;
+    align-self: center;
+   
+    max-width: 100%;
+    min-width: 100px;
+    /* padding-top: 20vh;
+    margin-right: 0; */
+}
+
+@media (max-width: 650px){
+    h1{color: tomato;}
+    .conteudo{
+        grid-column: 2 / -1;
+        padding-top: 10rem;
+        padding-left: 2rem;
+    }
+    .texto{
+        max-width: 60vw;
+    }
+    .icon svg path {fill: tomato;}
+    .images{
+        grid-row: 2 / -1;
+        grid-column: 2 / 4;
+    }
+}
