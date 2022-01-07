@@ -12,6 +12,7 @@
 body{
     font-family: 'Heebo', sans-serif;
     box-sizing: border-box;
+    background-image: url(../img/black_board_pequeno.jpg);
     background-image: url(../img/black_board4.jpg);
     background-position:right top;
     width: 100%;
